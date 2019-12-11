@@ -12,7 +12,6 @@ public class AgentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         nextHeading = FlowfieldController.instance.GetDirection(FlowfieldController.instance.WorldToGrid(transform.position));
         heading = Vector3.Lerp(heading, nextHeading, headingLerpAmount);
         transform.Translate(heading.normalized * Time.deltaTime * speed);
